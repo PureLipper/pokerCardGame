@@ -12,7 +12,7 @@ void PlayFieldController::init()
     _playFieldView = PlayFieldView::create();
 
     auto stack = _cardStack->getCardList();
-    for (auto card : stack)
+    for (auto card : *stack)
     {
         CardController* controller = new CardController(card);
         _cardControllers.push_back(controller);

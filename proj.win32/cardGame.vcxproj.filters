@@ -43,6 +43,9 @@
     <Filter Include="resource\res\config">
       <UniqueIdentifier>{fa6157f6-706a-411b-861f-62bcd8e56eeb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="resource\res\fonts">
+      <UniqueIdentifier>{fd62eb09-39ae-46bc-a5b7-6cd7319c5336}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -365,5 +368,16 @@
     <None Include="..\Resources\config\levelConfig.json">
       <Filter>resource\res\config</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\Resources\fonts\arial.ttf">
+      <Filter>resource\res\fonts</Filter>
+    </Font>
+    <Font Include="..\Resources\fonts\Marker Felt.ttf">
+      <Filter>resource\res\fonts</Filter>
+    </Font>
+    <Font Include="..\Resources\fonts\weiruanyahei.ttf">
+      <Filter>resource\res\fonts</Filter>
+    </Font>
   </ItemGroup>
 </Project>

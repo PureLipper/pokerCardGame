@@ -14,13 +14,15 @@ private:
 	StackView* _stackView;
 	CardStack* _cardStack;
 
+	std::vector<CardController*> _cardControllers;
+
+public:
 	float padding;//手牌间隔
 	float start;//手牌起始位置
 	float y;//CardView的y坐标
 
-	std::vector<CardController*> _cardControllers;
+	float top_X = 750;//topCard的x坐标
 
-public:
 	StackController(CardStack* cardStack);
 
 	/// <summary>

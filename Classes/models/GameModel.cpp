@@ -26,8 +26,7 @@ GameModel* GameModel::fromJson(const std::string& json)
 	CardStack* s1 = CardStack::fromJson(json1);
 	CardStack* s2 = CardStack::fromJson(json2);
 
-	GameModel* res = new GameModel(s1, s2);
-	return res;
+	return new GameModel(s1, s2);
 }
 
 CardStack* GameModel::getPlayField()

@@ -28,8 +28,6 @@ public:
 
 	void initGame();
 
-	GameModel* getCurrentGameModel() const;
-
 	/// <summary>
 	/// 给UndoManager添加一条记录
 	/// </summary>
@@ -42,13 +40,17 @@ public:
 	/// <param name="level">选择的关卡编号</param>
 	void startGame(int level);
 
-	GameView* getGameView() const;
-
-	GameModel* getGameModel() const;
-
 	/// <summary>
 	/// 将控制器中的视图添加到场景中
 	/// </summary>
 	/// <param name="Node">目标场景</param>
 	void addViewToScene(Scene* Node) const;
+
+
+	GameModel* getCurrentGameModel() const;
+	GameView* getGameView() const;
+	GameModel* getGameModel() const;
+	PlayFieldController* getPlayFieldController() const;
+	StackController* getStackController() const;
+	UndoManager* getUndoManager() const;
 };

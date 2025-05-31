@@ -28,7 +28,7 @@ public:
 	/// </summary>
 	void clearCard();
 
-	std::vector<CardModel*> getCardList();
+	std::vector<CardModel*>* getCardList();
 
 	/// <summary>
 	/// 序列化方法

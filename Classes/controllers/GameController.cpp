@@ -79,3 +79,18 @@ void GameController::addViewToScene(Scene* Node) const
 {
 	Node->addChild(_gameView);
 }
+
+PlayFieldController* GameController::getPlayFieldController() const
+{
+	return _playFieldController;
+}
+
+StackController* GameController::getStackController() const
+{
+	return _stackController;
+}
+
+UndoManager* GameController::getUndoManager() const
+{
+	return _undoManager;
+}

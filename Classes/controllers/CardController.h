@@ -31,4 +31,8 @@ public:
 	CardModel* getCardModel() const;
 
 	CardView* getCardView() const;
+
+	void hideCardView() const;
+
+	void showCardView() const;
 };

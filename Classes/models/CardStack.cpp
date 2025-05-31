@@ -12,8 +12,8 @@ void CardStack::clearCard() {
 	_cardList.clear();
 }
 
-std::vector<CardModel*> CardStack::getCardList() {
-	return _cardList;
+std::vector<CardModel*>* CardStack::getCardList() {
+	return &_cardList;
 }
 
 std::string CardStack::toJson() const {
