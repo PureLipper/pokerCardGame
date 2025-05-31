@@ -1,6 +1,6 @@
-#include "UndoService.h"
+#include "MatchService.h"
 
-bool UndoService::ifMatch(CardModel* m1, CardModel* m2)
+bool MatchService::ifMatch(CardModel* m1, CardModel* m2)
 {
 	if (abs(m1->getCardFace() - m2->getCardFace()) == 1)
 	{

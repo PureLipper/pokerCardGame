@@ -96,7 +96,7 @@
     <ClCompile Include="..\Classes\utils\JsonUtils.cpp">
       <Filter>src\utils</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\services\UndoService.cpp">
+    <ClCompile Include="..\Classes\services\MatchService.cpp">
       <Filter>src\services</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\services\ReplaceService.cpp">
@@ -116,6 +116,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\GameScene.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\utils\GameUtils.cpp">
+      <Filter>src\utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -167,7 +170,7 @@
     <ClInclude Include="..\Classes\utils\JsonUtils.h">
       <Filter>src\utils</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\services\UndoService.h">
+    <ClInclude Include="..\Classes\services\MatchService.h">
       <Filter>src\services</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\services\ReplaceService.h">
@@ -187,6 +190,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameScene.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\utils\GameUtils.h">
+      <Filter>src\utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

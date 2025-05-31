@@ -166,7 +166,8 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile Include="..\Classes\models\UndoModel.cpp" />
     <ClCompile Include="..\Classes\services\GameModelFromLevelGenerator.cpp" />
     <ClCompile Include="..\Classes\services\ReplaceService.cpp" />
-    <ClCompile Include="..\Classes\services\UndoService.cpp" />
+    <ClCompile Include="..\Classes\services\MatchService.cpp" />
+    <ClCompile Include="..\Classes\utils\GameUtils.cpp" />
     <ClCompile Include="..\Classes\utils\JsonUtils.cpp" />
     <ClCompile Include="..\Classes\views\CardView.cpp" />
     <ClCompile Include="..\Classes\views\GameView.cpp" />
@@ -191,7 +192,8 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClInclude Include="..\Classes\models\UndoModel.h" />
     <ClInclude Include="..\Classes\services\GameModelFromLevelGenerator.h" />
     <ClInclude Include="..\Classes\services\ReplaceService.h" />
-    <ClInclude Include="..\Classes\services\UndoService.h" />
+    <ClInclude Include="..\Classes\services\MatchService.h" />
+    <ClInclude Include="..\Classes\utils\GameUtils.h" />
     <ClInclude Include="..\Classes\utils\JsonUtils.h" />
     <ClInclude Include="..\Classes\views\CardView.h" />
     <ClInclude Include="..\Classes\views\GameView.h" />

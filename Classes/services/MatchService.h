@@ -2,9 +2,9 @@
 #include "models/CardModel.h"
 
 /// <summary>
-/// 服务器，提供判断是否接受替换的逻辑
+/// 服务层，提供判断是否接受替换的逻辑
 /// </summary>
-class UndoService
+class MatchService
 {
 public:
 	/// <summary>

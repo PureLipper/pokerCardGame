@@ -15,7 +15,7 @@ void PlayFieldController::init()
     for (auto card : *stack)
     {
         CardController* controller = new CardController(card);
-        _cardControllers.push_back(controller);
+        _cardControllers.emplace(card, controller);
         CardView* v = controller->getCardView();
         v->setPosition(card->getPosition());
         _playFieldView->addChild(v);
@@ -31,4 +31,9 @@ PlayFieldView* PlayFieldController::getPlayFieldView() const
 CardStack* PlayFieldController::getCardStack() const
 {
     return _cardStack;
+}
+
+CardController* PlayFieldController::getCardControllerByCardModel(CardModel* m)
+{
+    return _cardControllers[m];
 }

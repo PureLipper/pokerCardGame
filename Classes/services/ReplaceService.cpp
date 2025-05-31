@@ -1,7 +1,20 @@
 #include "ReplaceService.h"
 
-#include "UndoService.h"
+#include "MatchService.h"
 #include "controllers/GameController.h"
+#include "utils/GameUtils.h"
+
+int findCardModel(std::vector<CardModel*>* cards, CardModel* m)
+{
+	for (int i = 0;i < cards->size();i++)
+	{
+		if ((*cards)[i] == m)
+		{
+			return i;
+		}
+	}
+	return -1;
+}
 
 bool ReplaceService::replace(CardModel* m)
 {
@@ -9,36 +22,23 @@ bool ReplaceService::replace(CardModel* m)
 	auto gm = gc->getCurrentGameModel();
 	auto playField = gm->getPlayField()->getCardList();
 	auto stack = gm->getStack()->getCardList();
-	//如果this在Playfield中
-	if (std::find(playField->begin(), playField->end(), m) != playField->end())
+	int index = findCardModel(playField, m);
+	if (index != -1)
 	{
-		if (UndoService::ifMatch(m, stack->back()))
+		if (MatchService::ifMatch(m, stack->back()))
 		{
-			UndoModel* undoModel = new UndoModel(m, stack->back());
-			gc->addUndoHistory(undoModel);
-
-			playField->erase(std::remove_if(playField->begin(), playField->end(), [&](CardModel* c) {
-					return c == m;
-					}),
-				playField->end()
-			);
+			gc->addUndoHistory(new UndoModel(false, index, m->getPosition(), m, stack->back()));
+			playField->erase(playField->begin() + index);
 			stack->pop_back();
 			stack->push_back(m);
 			return true;
 		}
 		return false;
-	}
-	//如果this在Stack中
-	else if (std::find(stack->begin(), stack->end(), m) != stack->end())
+	}else
 	{
-		gc->addUndoHistory(new UndoModel(m,stack->back()));
-
-		stack->erase(
-			std::remove_if(stack->begin(), stack->end(), [&](CardModel* c) {
-				return c == m;
-				}),
-			stack->end()
-		);
+		index = findCardModel(stack, m);
+		gc->addUndoHistory(new UndoModel(true, index, GameUtils::getCardControllerByCard(m)->getCardView()->getPosition(), m, stack->back()));
+		stack->erase(stack->begin() + index);
 		stack->pop_back();
 		stack->push_back(m);
 		return true;

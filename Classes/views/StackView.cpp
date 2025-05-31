@@ -1,8 +1,5 @@
 #include "StackView.h"
 
-#include "ui/UIButton.h"
-
-
 StackView* StackView::create() {
     StackView* ret = new (std::nothrow) StackView();
     if (ret && ret->_init()) {

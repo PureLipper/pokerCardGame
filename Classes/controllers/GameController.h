@@ -46,6 +46,7 @@ public:
 	/// <param name="Node">Ä¿±ê³¡¾°</param>
 	void addViewToScene(Scene* Node) const;
 
+	void setBackspaceAvailable(bool) const;
 
 	GameModel* getCurrentGameModel() const;
 	GameView* getGameView() const;

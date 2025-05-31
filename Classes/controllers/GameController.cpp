@@ -94,3 +94,8 @@ UndoManager* GameController::getUndoManager() const
 {
 	return _undoManager;
 }
+
+void GameController::setBackspaceAvailable(bool f) const
+{
+	_stackController->setBackspaceAvailable(f);
+}

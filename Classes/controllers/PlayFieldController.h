@@ -14,7 +14,7 @@ private:
 	PlayFieldView* _playFieldView;
 	CardStack* _cardStack;
 
-	std::vector<CardController*> _cardControllers;
+	std::map<CardModel*, CardController*> _cardControllers;
 
 public:
 	PlayFieldController(CardStack* cardStack);
@@ -27,4 +27,6 @@ public:
 	PlayFieldView* getPlayFieldView() const;
 
 	CardStack* getCardStack() const;
+
+	CardController* getCardControllerByCardModel(CardModel* m);
 };

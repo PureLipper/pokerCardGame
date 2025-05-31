@@ -3,6 +3,7 @@
 #include "CardController.h"
 #include "cocos2d.h"
 #include "models/CardStack.h"
+#include "ui/UIButton.h"
 #include "views/StackView.h"
 
 /// <summary>
@@ -13,8 +14,9 @@ class StackController
 private:
 	StackView* _stackView;
 	CardStack* _cardStack;
+	ui::Button* _backspace;
 
-	std::vector<CardController*> _cardControllers;
+	std::map<CardModel*, CardController*> _cardControllers;
 
 public:
 	float padding;// ÷≈∆º‰∏Ù
@@ -33,4 +35,8 @@ public:
 	StackView* getStackView() const;
 
 	CardStack* getCardStack() const;
+
+	CardController* getCardControllerByCardModel(CardModel* m);
+
+	void setBackspaceAvailable(bool) const;
 };

@@ -1,5 +1,6 @@
 ﻿#include "StackController.h"
 
+#include "GameController.h"
 #include "ui/UIButton.h"
 
 StackController::StackController(CardStack* cardStack)
@@ -19,33 +20,33 @@ void StackController::init()
     for (int i = 0;i < stack->size() - 1;i++)
     {
         CardController* controller = new CardController((*stack)[i]);
-        _cardControllers.push_back(controller);
+        _cardControllers.emplace((*stack)[i], controller);
         CardView* v = controller->getCardView();
         v->setPosition(Vec2(start + i * padding, y));
         _stackView->addChild(v);
     }
 
     CardController* controller = new CardController(stack->back());
-    _cardControllers.push_back(controller);
+    _cardControllers.emplace(stack->back(),controller);
     CardView* top = controller->getCardView();
     top->setPosition(Vec2(top_X, y));
     _stackView->addChild(top);
 
-    auto backspace = ui::Button::create();
-    backspace->setTitleText("back");
-    backspace->setScale9Enabled(true);
-    backspace->setContentSize(Size(100, 50));
-    backspace->setPosition(Vec2(950, y));
+    _backspace = ui::Button::create();
+    _backspace->setTitleText("back");
+    _backspace->setScale9Enabled(true);
+    _backspace->setContentSize(Size(100, 50));
+    _backspace->setPosition(Vec2(950, y));
     //std::string fullPath = FileUtils::getInstance()->fullPathForFilename("fonts/weiruanyahei.ttf");
-    backspace->setTitleFontName("fonts/weiruanyahei.ttf");
-    backspace->setTitleFontSize(40);
-    backspace->addClickEventListener([](Ref* sender)
+    _backspace->setTitleFontName("fonts/weiruanyahei.ttf");
+    _backspace->setTitleFontSize(40);
+    _backspace->addClickEventListener([](Ref* sender)
         {
-            //UndoManager::Undo();
+            GameController::getInstance()->getUndoManager()->undo();
         });
     
 
-    _stackView->addChild(backspace);
+    _stackView->addChild(_backspace);
 }
 
 StackView* StackController::getStackView() const
@@ -56,4 +57,16 @@ StackView* StackController::getStackView() const
 CardStack* StackController::getCardStack() const
 {
     return _cardStack;
+}
+
+
+CardController* StackController::getCardControllerByCardModel(CardModel* m)
+{
+    return _cardControllers[m];
+};
+
+void StackController::setBackspaceAvailable(bool f) const
+{
+    _backspace->setEnabled(f);
+    _backspace->setBright(f);
 }
