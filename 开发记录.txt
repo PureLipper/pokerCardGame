@@ -1,0 +1,10 @@
+5.30
+部署python2.7环境
+部署cocos2dx 3.17.2环境
+从cocos构建模版项目
+下载并解压所有图像资源到Resource文件夹
+构建项目文件结构，创建所有空文件
+初步学习cocos2dx 3.17.2
+配置屏幕设计尺寸
+编写CardModel、CardStack、GameModel、CardResConfig、CardView类
+初步实现点击事件响应
