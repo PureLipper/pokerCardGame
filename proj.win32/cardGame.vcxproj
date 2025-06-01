@@ -279,6 +279,9 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <Font Include="..\Resources\fonts\Marker Felt.ttf" />
     <Font Include="..\Resources\fonts\weiruanyahei.ttf" />
   </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\Resources\strings\string.xml" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

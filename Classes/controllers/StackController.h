@@ -36,7 +36,16 @@ public:
 
 	CardStack* getCardStack() const;
 
+	/// <summary>
+	/// 根据CardModel的指针获取对应的控制器
+	/// </summary>
+	/// <param name="m">CardModel的指针</param>
+	/// <returns>对应控制器</returns>
 	CardController* getCardControllerByCardModel(CardModel* m);
 
-	void setBackspaceAvailable(bool) const;
+	/// <summary>
+	/// 启用或禁用回退按钮
+	/// </summary>
+	/// <param name="f">true/false</param>
+	void setBackspaceAvailable(bool f) const;
 };

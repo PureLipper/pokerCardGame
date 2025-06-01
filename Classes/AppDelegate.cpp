@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "GameScene.h"
+#include "controllers/GameController.h"
 
 // #define USE_AUDIO_ENGINE 1
 // #define USE_SIMPLE_AUDIO_ENGINE 1
@@ -36,11 +37,8 @@ AppDelegate::~AppDelegate()
 #endif
 }
 
-// if you want a different context, modify the value of glContextAttrs
-// it will affect all platforms
 void AppDelegate::initGLContextAttrs()
 {
-    // set OpenGL context attributes: red,green,blue,alpha,depth,stencil,multisamplesCount
     GLContextAttrs glContextAttrs = {8, 8, 8, 8, 24, 8, 0};
 
     GLView::setGLContextAttrs(glContextAttrs);
@@ -67,9 +65,6 @@ bool AppDelegate::applicationDidFinishLaunching() {
         director->setOpenGLView(glview);
     }
 
-    // turn on display FPS
-    //director->setDisplayStats(true);
-
     director->setAnimationInterval(1.0f / 120);
 
     glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::FIXED_WIDTH);
@@ -77,6 +72,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	register_all_packages();
 
     auto scene = GameScene::createScene();
+
+    auto gc = GameController::getInstance();
+    gc->initGame();
+    gc->startGame(1);
+    gc->addViewToScene(scene);
+
     director->runWithScene(scene);
 
     return true;

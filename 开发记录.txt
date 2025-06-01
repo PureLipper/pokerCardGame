@@ -8,3 +8,17 @@
 配置屏幕设计尺寸
 编写CardModel、CardStack、GameModel、CardResConfig、CardView类
 初步实现点击事件响应
+5.31
+实现关卡数据的读取与模型转化
+实现所有模型类及其序列化（UndoModel除外）
+实现每个View类、Controller类补全相关Utils方法和Service提供的服务
+实现卡牌的点击后逻辑
+实现卡牌替换判断
+实现卡牌动画效果
+
+6.1
+实现回退功能
+优化代码层级结构
+添加各代码注释、规范命名
+修复了中文显示问题
+

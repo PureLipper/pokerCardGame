@@ -24,10 +24,5 @@ bool GameScene::init()
         return false;
     }
 
-    auto gc = GameController::getInstance();
-    gc->initGame();
-    gc->startGame(1);
-    gc->addViewToScene(this);
-
     return true;
 }

@@ -11,14 +11,14 @@
 class GameController
 {
 private:
-	static GameController* instance;
+	static GameController* instance;//单例实例
 
-	GameModel* _gameModel;
-	GameView* _gameView;
+	GameModel* _gameModel;//游戏模型
+	GameView* _gameView;//游戏视图
 
-	PlayFieldController* _playFieldController;
-	StackController* _stackController;
-	UndoManager* _undoManager;
+	PlayFieldController* _playFieldController;//桌面牌区控制器
+	StackController* _stackController;//手牌区控制器
+	UndoManager* _undoManager;//回退管理器
 
 	GameController();
 	~GameController();

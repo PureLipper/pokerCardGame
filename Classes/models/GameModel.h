@@ -8,8 +8,8 @@
 class GameModel
 {
 private:
-	CardStack* _playField;
-	CardStack* _stack;
+	CardStack* _playField;///桌面牌区牌堆
+	CardStack* _stack;//手牌区牌堆
 
 public:
 	GameModel(CardStack* playField, CardStack* stack) : _playField(playField), _stack(stack){}

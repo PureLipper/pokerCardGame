@@ -46,6 +46,9 @@
     <Filter Include="resource\res\fonts">
       <UniqueIdentifier>{fd62eb09-39ae-46bc-a5b7-6cd7319c5336}</UniqueIdentifier>
     </Filter>
+    <Filter Include="resource\res\strings">
+      <UniqueIdentifier>{4dd897ba-0a35-4d85-8616-365891e3d313}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -385,5 +388,10 @@
     <Font Include="..\Resources\fonts\weiruanyahei.ttf">
       <Filter>resource\res\fonts</Filter>
     </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\Resources\strings\string.xml">
+      <Filter>resource\res\strings</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

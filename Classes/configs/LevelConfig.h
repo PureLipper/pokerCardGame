@@ -10,7 +10,7 @@ using namespace rapidjson;
 /// </summary>
 class LevelConfig {
 private:
-	static std::map<int, Document*>* levels;
+	static std::map<int, Document*>* _levels;
 public:
 	/// <summary>
 	/// ×¢²álevelConfig
