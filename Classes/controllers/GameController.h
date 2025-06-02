@@ -13,6 +13,7 @@ class GameController
 private:
 	static GameController* instance;//单例实例
 
+	Size designedSize;//预设尺寸
 	GameModel* _gameModel;//游戏模型
 	GameView* _gameView;//游戏视图
 
@@ -26,7 +27,7 @@ private:
 public:
 	static GameController* getInstance();
 
-	void initGame();
+	void initGame(Size);
 
 	/// <summary>
 	/// 给UndoManager添加一条记录

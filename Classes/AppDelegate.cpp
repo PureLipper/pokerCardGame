@@ -1,5 +1,4 @@
 #include "AppDelegate.h"
-#include "GameScene.h"
 #include "controllers/GameController.h"
 
 // #define USE_AUDIO_ENGINE 1
@@ -74,7 +73,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto scene = Scene::create();//使用默认空场景
 
     auto gc = GameController::getInstance();
-    gc->initGame();
+    gc->initGame(designResolutionSize);
     gc->startGame(1);
     gc->addViewToScene(scene);
 

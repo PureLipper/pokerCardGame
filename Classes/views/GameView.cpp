@@ -2,9 +2,9 @@
 
 #include "controllers/CardController.h"
 
-GameView* GameView::create() {
+GameView* GameView::create(Size s) {
     GameView* ret = new (std::nothrow) GameView();
-    if (ret && ret->_init()) {
+    if (ret && ret->_init(s)) {
         ret->autorelease();
         return ret;
     }
@@ -12,10 +12,9 @@ GameView* GameView::create() {
     return nullptr;
 }
 
-bool GameView::_init() {
+bool GameView::_init(Size s) {
     if (!Node::init()) return false;
 
-    Size s(1080, 2080);
     this->setContentSize(s);
 
     return true;

@@ -13,14 +13,16 @@ private:
 	/// <summary>
 	/// 对GameView进行初始化
 	/// </summary>
+	/// <param name="s">视图尺寸</param>
 	/// <returns>是否初始化成功</returns>
-	bool _init();
+	bool _init(Size s);
 
 public:
 	/// <summary>
 	/// 创建GameView对象
 	/// </summary>
 	/// <param name="gm">绑定的GameModel对象</param>
+	/// <param name="s>视图尺寸</param>
 	/// <returns>实例化的GameView对象</returns>
-	static GameView* create();
+	static GameView* create(Size s);
 };

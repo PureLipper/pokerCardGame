@@ -49,11 +49,53 @@ endif()
 # add cross-platforms source files and header files 
 list(APPEND GAME_SOURCE
      Classes/AppDelegate.cpp
-     Classes/HelloWorldScene.cpp
+        Classes/configs/CardResConfig.cpp
+        Classes/configs/LevelConfig.cpp
+        Classes/configs/LevelConfigLoader.cpp
+        Classes/controllers/CardController.cpp
+        Classes/controllers/GameController.cpp
+        Classes/controllers/PlayFieldController.cpp
+        Classes/controllers/StackController.cpp
+        Classes/managers/UndoManager.cpp
+        Classes/models/CardModel.cpp
+        Classes/models/CardStack.cpp
+        Classes/models/GameModel.cpp
+        Classes/models/UndoModel.cpp
+        Classes/services/GameModelFromLevelGenerator.cpp
+        Classes/services/MatchService.cpp
+        Classes/services/ReplaceService.cpp
+        Classes/utils/GameUtils.cpp
+        Classes/utils/JsonUtils.cpp
+        Classes/views/CardView.cpp
+        Classes/views/GameView.cpp
+        Classes/views/PlayFieldView.cpp
+        Classes/views/StackView.cpp
+#     Classes/HelloWorldScene.cpp
      )
 list(APPEND GAME_HEADER
      Classes/AppDelegate.h
-     Classes/HelloWorldScene.h
+        Classes/configs/CardResConfig.h
+        Classes/configs/LevelConfig.h
+        Classes/configs/LevelConfigLoader.h
+        Classes/controllers/CardController.h
+        Classes/controllers/GameController.h
+        Classes/controllers/PlayFieldController.h
+        Classes/controllers/StackController.h
+        Classes/managers/UndoManager.h
+        Classes/models/CardModel.h
+        Classes/models/CardStack.h
+        Classes/models/GameModel.h
+        Classes/models/UndoModel.h
+        Classes/services/GameModelFromLevelGenerator.h
+        Classes/services/MatchService.h
+        Classes/services/ReplaceService.h
+        Classes/utils/GameUtils.h
+        Classes/utils/JsonUtils.h
+        Classes/views/CardView.h
+        Classes/views/GameView.h
+        Classes/views/PlayFieldView.h
+        Classes/views/StackView.h
+#     Classes/HelloWorldScene.h
      )
 
 if(ANDROID)

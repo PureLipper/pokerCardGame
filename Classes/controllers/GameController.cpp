@@ -8,7 +8,6 @@ GameController* GameController::instance = nullptr;
 
 GameController::GameController()
 {
-	initGame();
 }
 
 GameController::~GameController()
@@ -19,10 +18,11 @@ GameController::~GameController()
 }
 
 
-void GameController::initGame()
+void GameController::initGame(Size s)
 {
 	CardResConfig::loadAllResource();
 	LevelConfigLoader::loadAllLevelConfig();
+	designedSize = s;
 }
 
 GameController* GameController::getInstance()
@@ -56,7 +56,7 @@ void GameController::startGame(int level)
 	_stackController->init();
 	_undoManager->init();
 
-	_gameView = GameView::create();
+	_gameView = GameView::create(designedSize);
 	
 	auto playFieldView = _playFieldController->getPlayFieldView();
 	playFieldView->setPosition(0, _gameView->getContentSize().height - playFieldView->getContentSize().height);
@@ -78,6 +78,9 @@ GameView* GameController::getGameView() const
 void GameController::addViewToScene(Scene* Node) const
 {
 	Node->addChild(_gameView);
+	auto s = Director::getInstance()->getVisibleSize();
+	auto ds = designedSize;
+	_gameView->setPosition((s.width - ds.width) / 2, (s.height - ds.height) / 2);
 }
 
 PlayFieldController* GameController::getPlayFieldController() const
