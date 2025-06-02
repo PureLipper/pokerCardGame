@@ -34,6 +34,7 @@ void CardController::registerOnClickCallback() const
 
 					auto c0 = GameUtils::getCardControllerByCard(topCard);
 
+					_cardView->stopAllActions();
 					auto moveTo = MoveTo::create(0.5, p3);
 					auto callback = CallFunc::create([topCard,c0]() {
 						c0->hideCardView();

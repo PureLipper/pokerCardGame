@@ -117,9 +117,6 @@
     <ClCompile Include="..\Classes\views\StackView.cpp">
       <Filter>src\views</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\GameScene.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\utils\GameUtils.cpp">
       <Filter>src\utils</Filter>
     </ClCompile>
@@ -190,9 +187,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\views\StackView.h">
       <Filter>src\views</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameScene.h">
-      <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\utils\GameUtils.h">
       <Filter>src\utils</Filter>

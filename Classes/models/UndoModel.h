@@ -2,7 +2,7 @@
 #include "CardModel.h"
 
 /// <summary>
-/// 记录一次操作，UndoManager可以根据此操作进行回档
+/// 记录一次操作，UndoManager可以根据此操作进行回档（暂不支持序列化存档）
 /// </summary>
 class UndoModel
 {

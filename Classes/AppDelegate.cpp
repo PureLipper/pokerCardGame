@@ -71,7 +71,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
 	register_all_packages();
 
-    auto scene = GameScene::createScene();
+    auto scene = Scene::create();//使用默认空场景
 
     auto gc = GameController::getInstance();
     gc->initGame();

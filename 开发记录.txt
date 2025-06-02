@@ -8,6 +8,7 @@
 配置屏幕设计尺寸
 编写CardModel、CardStack、GameModel、CardResConfig、CardView类
 初步实现点击事件响应
+
 5.31
 实现关卡数据的读取与模型转化
 实现所有模型类及其序列化（UndoModel除外）
