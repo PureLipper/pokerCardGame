@@ -37,6 +37,7 @@ bool CardView::_init(CardModel* card) {
     listener->setSwallowTouches(true);
     listener->onTouchBegan = [this](Touch* touch, Event* event) -> bool
         {
+            if (!_enabled) return false;
             Vec2 locationInNode = this->convertToNodeSpace(touch->getLocation());
             Size size = this->getContentSize();
             Rect rect(-size.width/2, -size.height/2, size.width, size.height);
@@ -56,4 +57,9 @@ bool CardView::_init(CardModel* card) {
 void CardView::setOnClick(std::function<void()> onClick)
 {
     _onClick = onClick;
+}
+
+void CardView::setEnabled(bool b)
+{
+    _enabled = b;
 }

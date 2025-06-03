@@ -37,6 +37,7 @@ bool UndoManager::undo()
 	stackCards->pop_back();
 	stackCards->push_back(m2);
 	GameUtils::getCardControllerByCard(m2)->showCardView();
+	GameUtils::getCardControllerByCard(m2)->getCardView()->setEnabled(true);
 
 	auto cards = undoModel->ifInStack() ? 
 		GameController::getInstance()->getGameModel()->getStack()->getCardList() :

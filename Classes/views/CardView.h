@@ -9,6 +9,7 @@ USING_NS_CC;
 /// </summary>
 class CardView : public Node{
 private:
+	bool _enabled = true;//是否可用
 	Sprite* _background;//背景图片
 	Sprite* _smallNumber;//小数字Sprite
 	Sprite* _bigNumber;//大数字Sprite
@@ -34,4 +35,9 @@ public:
 	/// </summary>
 	/// <param name="f">具体回调函数</param>
 	void setOnClick(std::function<void()> f);
+
+	/// <summary>
+	/// 设置点击可用性
+	/// </summary>
+	void setEnabled(bool b);
 };

@@ -1,0 +1,1 @@
+D:\projects\cocos\cardGame\cardGame\proj.win32\Release.win32\cardGame.exe

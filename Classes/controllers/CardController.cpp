@@ -33,6 +33,7 @@ void CardController::registerOnClickCallback() const
 					GameController::getInstance()->setBackspaceAvailable(false);
 
 					auto c0 = GameUtils::getCardControllerByCard(topCard);
+					c0->getCardView()->setEnabled(false);
 
 					_cardView->stopAllActions();
 					auto moveTo = MoveTo::create(0.5, p3);
